@@ -56,6 +56,44 @@ Sljedeće Arduino biblioteke treba instalirati:
 5. Konfigurišite lokalni server i bazu podataka (pomoću **XAMPP**).
 6. Konfigurišite **SMTP postavke** za slanje e-mail obavijesti pomoću **WiFi ESP8266** modula.
 
+## Pseudokod za Arduino projekat
+
+### **Funkcija setup**
+
+1. **Inicijalizacija serijske komunikacije** na brzini od 38400 baud-a.  
+2. **Inicijalizacija softverskog serijskog porta** na pinovima 9 i 10 pri brzini od 38400 baud-a.  
+3. Postavljanje **pina 8 kao izlaznog** (**OUTPUT**).  
+4. **Pokretanje DHT senzora.**  
+5. Ako se **OLED ekran ne inicijalizuje**:  
+   - Prikazati poruku o grešci u serijskom monitoru.  
+   - Ući u **beskonačnu petlju** kako bi se program zaustavio.  
+6. Sačekati **2 sekunde**.  
+7. **Pokrenuti Ethernet konekciju.**  
+   - Ako konekcija nije uspješna:  
+     - Prikazati poruku o grešci u serijskom monitoru.  
+     - Pokušati ponovo sa **statističkom IP adresom**.  
+
+---
+
+### **Beskonačna petlja**
+
+1. Sačekati **2 sekunde**.  
+2. Inicijalizirati varijable za **temperaturu** i **vlažnost zraka**.  
+3. **Očitati temperaturu i vlažnost** sa DHT senzora.  
+   - Ako su podaci nevažeći:  
+     - Prikazati poruku o grešci i **izaći iz funkcije**.  
+4. Ako je uspostavljena veza sa **serverom**:  
+   - Poslati **GET zahtjev** serveru sa podacima o temperaturi i vlažnosti.  
+5. **Prikaz podataka**:  
+   - Na **serijskom monitoru**.  
+   - Na **OLED ekranu**.  
+6. **Slanje podataka o temperaturi i vlažnosti putem Bluetooth-a.**  
+7. Sačekati **5 sekundi**.  
+8. Postaviti **pin 8 na HIGH** (uključiti).  
+   - Sačekati **10 sekundi**.  
+   - Postaviti **pin 8 na LOW** (isključiti).  
+
+
 ## Slike 
 Slika 1: Blok dijagrama povezivanja komponenti
 ![BMT-BLOKSHEMA](https://github.com/user-attachments/assets/20f3eb3e-45f3-4448-9368-6cc543dbd0fc)
