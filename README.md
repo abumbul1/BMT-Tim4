@@ -62,9 +62,9 @@ Slika 1: Blok dijagrama povezivanja komponenti
 
 ## Zaključak
 
-Projekat demonstrira integraciju senzora za temperaturu i vlažnost zraka, OLED displeja, Bluetooth i Ethernet modula za efikasan prenos i pohranjivanje podataka. Sistem je obogaćen primjenom VLC tehnologije i slanjem e-mail obavijesti putem ESP8266 modula, čime je postignuta inovativnost i viši nivo funkcionalnosti. Tokom testiranja, izmjerene vrijednosti temperature i vlažnosti bile su u očekivanom rasponu, potvrđujući tačnost sistema.
+Projekat demonstrira integraciju senzora za temperaturu i vlažnost zraka, OLED displeja, Bluetooth i Ethernet modula za efikasan prenos i pohranjivanje podataka. Sistem je obogaćen primjenom VLC tehnologije i slanjem e-mail obavijesti putem ESP8266 modula, čime je postignuta inovativnost i viši nivo funkcionalnosti. Tokom testiranja, izmjerene vrijednosti temperature i vlažnosti bile su u očekivanom rasponu, potvrđujući tačnost sistema. Prototip sistema je testiran u laboratorijskim uslovima i postigao je zadovoljavajuće performanse za praćenje parametara okoline u realnom vremenu. Ovaj sistem može se primijeniti u različitim industrijama kao što su poljoprivreda (za praćenje sulova u staklenicima), skladištenje hrane i lijekova (za očuvanje kvaliteta proizvoda), laboratorijima (za precizno praćenje uslova eksperimenta), pametnim kućama (za automatsko podešavanje temperature i vlažnosti) i mnogim drugim oblastima.
 
-**Zaključak: Ograničenja Bluetooth tehnologije i problemi s OLED displejom na Arduino Uno ploči riješeni su dodatkom novih tehnologija i prelaskom na Arduino Mega, čime je osigurano stabilno funkcionisanje sistema.**
+**Prijedlozi za unapređenje sistema: Integracija GSM modula (eng. Global System for Mobile Communications), koji bi omogućio slanje SMS (eng. Short Message Service) obavijesti u situacijama kada internet nije dostupan, osiguravajući pravovremenu reakciju na ekstremne vrijednosti temperature i vlažnosti.**
 
 
 
