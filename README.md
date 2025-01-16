@@ -60,7 +60,4 @@ Sljedeće Arduino biblioteke treba instalirati:
 Slika 1: Blok dijagrama povezivanja komponenti
 ![BMT-BLOKSHEMA](https://github.com/user-attachments/assets/20f3eb3e-45f3-4448-9368-6cc543dbd0fc)
 
-Slika 2: Praktična implementacija sistema
-![pratična implementacija](https://github.com/user-attachments/assets/9226a062-2964-4dbe-a317-47cd270ff20b)
-
 
