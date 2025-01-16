@@ -60,4 +60,11 @@ Sljedeće Arduino biblioteke treba instalirati:
 Slika 1: Blok dijagrama povezivanja komponenti
 ![BMT-BLOKSHEMA](https://github.com/user-attachments/assets/20f3eb3e-45f3-4448-9368-6cc543dbd0fc)
 
+## Zaključak
+
+Projekat demonstrira integraciju senzora za temperaturu i vlažnost zraka, OLED displeja, Bluetooth i Ethernet modula za efikasan prenos i pohranjivanje podataka. Sistem je obogaćen primjenom VLC tehnologije i slanjem e-mail obavijesti putem ESP8266 modula, čime je postignuta inovativnost i viši nivo funkcionalnosti. Tokom testiranja, izmjerene vrijednosti temperature i vlažnosti bile su u očekivanom rasponu, potvrđujući tačnost sistema.
+
+**Zaključak: Ograničenja Bluetooth tehnologije i problemi s OLED displejom na Arduino Uno ploči riješeni su dodatkom novih tehnologija i prelaskom na Arduino Mega, čime je osigurano stabilno funkcionisanje sistema.**
+
+
 
