@@ -62,9 +62,9 @@ Slika 1: Blok dijagrama povezivanja komponenti
 
 ## Zaključak
 
-Projekat demonstrira integraciju senzora za temperaturu i vlažnost zraka, OLED displeja, Bluetooth i Ethernet modula za efikasan prenos i pohranjivanje podataka. Sistem je obogaćen primjenom VLC tehnologije i slanjem e-mail obavijesti putem ESP8266 modula, čime je postignuta inovativnost i viši nivo funkcionalnosti. Tokom testiranja, izmjerene vrijednosti temperature i vlažnosti bile su u očekivanom rasponu, potvrđujući tačnost sistema.
+Projekat demonstrira integraciju senzora za temperaturu i vlažnost zraka, OLED displeja, Bluetooth i Ethernet modula za efikasan prenos i pohranjivanje podataka. Sistem je obogaćen primjenom VLC tehnologije i slanjem e-mail obavijesti putem ESP8266 modula, čime je postignuta inovativnost i viši nivo funkcionalnosti. Tokom testiranja, izmjerene vrijednosti temperature i vlažnosti bile su u očekivanom rasponu, potvrđujući tačnost sistema. Zbog ograničenja Bluetooth tehnologije, koja omogućava samo direktnu komunikaciju između uređaja, bilo je potrebno koristiti dodatne tehnologije kako bi se proširila funkcionalnost sistema. Iako Arduino W5100 Ethernet Shield donosi prednosti, njegov osnovni nedostatak je što ne omogućava bežični prenos podataka. Također, problem sa komunikacijom sa OLED displejom na Arduino Uno ploči je riješen prelaskom na Arduino Mega, što je omogućilo nesmetan rad sistema.
 
-**Zaključak: Ograničenja Bluetooth tehnologije i problemi s OLED displejom na Arduino Uno ploči riješeni su dodatkom novih tehnologija i prelaskom na Arduino Mega, čime je osigurano stabilno funkcionisanje sistema.**
+**Prijedlozi za unapređenje sistema: Integracija GSM modula (eng. Global System for Mobile Communications), koji bi omogućio slanje SMS (eng. Short Message Service) obavijesti u situacijama kada internet nije dostupan, osiguravajući pravovremenu reakciju na ekstremne vrijednosti temperature i vlažnosti.**
 
 
 
