@@ -1,12 +1,9 @@
-# Sistem za prenos podataka sa senzora
+# Arduino bazirani sistem za prenos i spremanje senzorskih podataka u realnom vremenu
 
 ## Opis projekta
-Ovaj projekat implementira sistem za prenos podataka prikupljenih sa senzora za temperaturu i vlažnost zraka. Podaci se očitavaju pomoću senzora **DHT11**, prikazuju na **OLED displeju**, te šalju putem **Bluetooth HC05** modula na mobilni uređaj.
+Ovaj projekat implementira sistem za prenos podataka prikupljenih sa senzora za temperaturu i vlažnost zraka. Podaci se očitavaju pomoću senzora **DHT11**, prikazuju na **OLED displeju**, te šalju putem **Bluetooth HC05** modula na mobilni uređaj. Također, sistem omogućava prenos izmjerenih podataka na bazu podataka koja se nalazi na lokalnom serveru putem **Ethernet shield** modula. Projekat uključuje i korištenje **VLC (Visible Light Communication)** tehnologije. Kada se podaci unesu u bazu, **LED dioda** zasvijetli na 10 sekundi, dok **fotorezistor** detektuje svjetlost sa diode i pokreće **WiFi ESP8266** modul koji šalje e-mail obavijest.
 
-Također, sistem omogućava prenos izmjerenih podataka na bazu podataka koja se nalazi na lokalnom serveru putem **Ethernet shield** modula. Projekat uključuje i korištenje **VLC (Visible Light Communication)** tehnologije. Kada se podaci unesu u bazu, **LED dioda** zasvijetli na 10 sekundi, dok **fotorezistor** detektuje svjetlost sa diode i pokreće **WiFi ESP8266** modul koji šalje e-mail obavijest.
-
-Poruka u e-mailu sadrži:
-Senzor je očitao temperaturu i vlažnost. Vrijednosti su unijete u lokalnu bazu. Provjerite očitanje bluetooth -a.
+Poruka u e-mailu sadrži: _Senzor je očitao temperaturu i vlažnost. Vrijednosti su unijete u lokalnu bazu. Provjerite očitanje bluetooth -a._
 
 ## Ciljevi i funkcionalnosti
 1. **Prikupljanje podataka** o temperaturi i vlažnosti zraka.
@@ -32,23 +29,24 @@ Senzor je očitao temperaturu i vlažnost. Vrijednosti su unijete u lokalnu bazu
 
 ### Potrebne biblioteke:
 Sljedeće Arduino biblioteke treba instalirati:
-- `DHT.h` (za rad sa DHT11 senzorom)
-- `SPI.h` 
-- `SoftwareSerial.h`
-- `Wire.h`
-- `Adafruit_GFX` i `Adafruit_SSD1306` (za OLED displej)
-- `ESP8266WiFi` (za WiFi modul)
-- `Ethernet.h` (za Ethernet shield)
-- `ESP_Mail_Client.h` (za slanje e-mail obavijesti)
+- `DHT.h`: Za rad sa DHT11 senzorom za očitavanje temperature i vlažnosti zraka.
+- `SPI.h`: Omogućava komunikaciju sa uređajima putem SPI protokola (koristi se za Ethernet shield).
+- `SoftwareSerial.h`: Omogućava korištenje dodatnih serijskih portova za komunikaciju.
+- `Wire.h`: Za I2C komunikaciju sa uređajima kao što su OLED displeji.
+- `Adafruit_GFX` i `Adafruit_SSD1306`: Za rad sa OLED displejima.
+- `ESP8266WiFi`: Za upravljanje WiFi modulom ESP8266.
+- `Ethernet.h`: Omogućava rad sa Ethernet shieldom i povezivanje putem LAN mreže.
+- `ESP_Mail_Client.h`: Za slanje e-mail obavijesti putem SMTP protokola.
 
 ### Korištenje:
 1. Postavite potrebne komponente prema dijagramu ožičenja (vidi sliku ispod).
-2. Povežite **Arduino Mega** s računarom putem kabla.
-3. Učitajte kod na Arduino pomoću **Arduino IDE-a**.
-4. Otvorite aplikaciju na mobilnom uređaju koja može primati Bluetooth podatke.
-5. Konfigurišite lokalni server za prijem podataka putem **Ethernet veze**.
-6. Provjerite **Bluetooth vezu** sa mobilnim uređajem i **Ethernet konekciju** sa serverom.
-7. Kada **LED dioda** zasvijetli nakon unosa podataka u bazu, **fotorezistor** će detektovati svjetlost i aktivirati **WiFi ESP8266** modul koji šalje e-mail obavijest.
+   ![Cirkit_shema](https://github.com/user-attachments/assets/97a414ea-088a-4aec-9c05-139d463e0b69)
+3. Povežite **Arduino Mega** s računarom putem kabla.
+4. Učitajte kod na Arduino pomoću **Arduino IDE-a**.
+5. Otvorite aplikaciju na mobilnom uređaju koja može primati Bluetooth podatke.
+6. Konfigurišite lokalni server za prijem podataka putem **Ethernet veze**.
+7. Provjerite **Bluetooth vezu** sa mobilnim uređajem i **Ethernet konekciju** sa serverom.
+8. Kada **LED dioda** zasvijetli nakon unosa podataka u bazu, **fotorezistor** će detektovati svjetlost i aktivirati **WiFi ESP8266** modul koji šalje e-mail obavijest.
 
 ## Upute za instalaciju
 1. Preuzmite i instalirajte **Arduino IDE** sa [zvanične stranice](https://www.arduino.cc/en/software).
@@ -58,10 +56,10 @@ Sljedeće Arduino biblioteke treba instalirati:
 5. Konfigurišite lokalni server i bazu podataka (pomoću **XAMPP**).
 6. Konfigurišite **SMTP postavke** za slanje e-mail obavijesti pomoću **WiFi ESP8266** modula.
 
-## Slike ili dijagrami
-**Primjer dijagrama ožičenja:**
-- Slika 1: Blok dijagrama povezivanja komponenti
-- Slika 2: Praktična implementacija sistema
+## Slike 
+![BMT-BLOKSHEMA](https://github.com/user-attachments/assets/3d25e486-8305-498a-944f-0a984150282d)
+Slika 1: Blok dijagrama povezivanja komponenti
 
-*Napomena: Ubacite slike dijagrama ožičenja i prikaza komponenti kako biste olakšali implementaciju.*
+![pratična implementacija](https://github.com/user-attachments/assets/e270ae53-9a43-47c1-9f4c-dceff649e15c)
+Slika 2: Praktična implementacija sistema
 
